@@ -1,18 +1,40 @@
-Get Hosts:
+INTRODUCTION:
+------------
 
-Prerequisites:
+This module contains script files to get all clusters.
+
+
+REQUIREMENTS:
+------------
+
+This module requires the following modules:
+
+ * Python 2.7.x
+   Libraries
+ 	* requests
+ 	* sys
+ 	* json
+ 	* time
+
+ * The scripts must be run outside sddc-manager environment.
+
+ * DNS resolution must be done for sddc-manager.
+
+
+PREREQUSITES:
+--------------
 
 The following data is required
 
-	->Username of each host
+	-> Username of each host
 
-	->Password of each host
+	-> Password of each host
 
-	->FQDN of each host
+	-> FQDN of each host
 
-	->Network pool name to which each host has to be associated with (Optional)
+	-> Network pool name to which each host has to be associated with (Optional)
 
-	->Network pool ID to which each host has to be associated with
+	-> Network pool ID to which each host has to be associated with
 
 TIP
 Refer to: Get the Network Pools and Get a Network of a Network Pool
@@ -43,3 +65,9 @@ All disk partitions on HDD / SSD are deleted.
 The hosts, if intended to be used for vSAN domain must be associated with vSAN enabled network pool.
 
 The hosts, if intended to be used for NFS domain must be associated with NFS enabled network pool.
+
+USAGE:
+-----
+
+Usage:	python get_clusters.py <hostname> <username> <password>
+
