@@ -7,7 +7,7 @@ def get_help():
     help_description = '''\n\t\t----Get Clusters----
     Usage:
     python get_clusters.py <hostname> <username> <password>\n Refer to documentation for more detais\n'''
-    print help_description
+    print (help_description)
 
 def get_domains():
     arguments = sys.argv
@@ -22,9 +22,9 @@ def get_domains():
     response = requests.get(url, headers=headers,auth=(username, password))
     if(response.status_code == 200):
         response = json.loads(response.text)
-        print json.dumps(response,indent=4, sort_keys=True)
+        print (json.dumps(response,indent=4, sort_keys=True))
     else:
-        print "Error reaching the server."
-        print response.text
+        print ("Error reaching the server.")
+        print (response.text)
         exit(1)
 get_domains()
